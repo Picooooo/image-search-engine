@@ -1,15 +1,15 @@
-import method.color
-import method.hog
-import method.vgg16
+import method.color as color
+import method.hog as hog
+import method.vgg16 as vgg16
 
 def extract_img(img, method):
     extractor = None
     if method == "color":
-        extractor = Color()
+        extractor = color.Color()
     elif method == "hog":
-        extractor == Hog()
+        extractor == hog.Hog()
     else:
-        extractor = Vgg16()
+        extractor = vgg16.Vgg16()
 
     feature = extractor.extract(img)
 
