@@ -7,7 +7,7 @@ def extract_img(img, method):
     if method == "color":
         extractor = color.Color()
     elif method == "hog":
-        extractor == hog.Hog()
+        extractor = hog.Hog()
     else:
         extractor = vgg16.Vgg16()
 
