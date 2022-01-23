@@ -1,4 +1,4 @@
-import img_descriptor
+from img_descriptor import extract_img
 from tensorflow.keras.preprocessing import image
 import os
 from pathlib import Path
@@ -9,7 +9,7 @@ def extract_database(input_database_path, output_path, method):
     feature, feature_path = [], []
     for fi in os.listdir(input_database_path):
         img = image.load_img(os.path.join(input_database_path, fi), target_size=(224, 224))
-        feature = img_descriptor.extract_img(img, method)
+        feature = extract_img(img, method)
         feature_path = Path(output_path + "/" + method) / (fi[:-4] + ".npy")
         np.save(feature_path, feature)
 
