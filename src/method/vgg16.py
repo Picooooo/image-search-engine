@@ -18,6 +18,3 @@ class Vgg16:
 
         return features
     
-    def get_name_method(self):
-        name = "Vgg16"
-        return name
